@@ -12,7 +12,7 @@ use Slim\Views\Twig;
 
 require dirname(__DIR__) . '/vendor/autoload.php';
 
-class TwigTest extends \PHPUnit_Framework_TestCase
+class TwigTest extends \PHPUnit\Framework\TestCase
 {
     public function testFetch()
     {

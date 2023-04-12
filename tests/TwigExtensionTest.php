@@ -14,7 +14,7 @@ use Slim\Views\TwigExtension;
 
 require dirname(__DIR__) . '/vendor/autoload.php';
 
-class TwigExtensionTest extends \PHPUnit_Framework_TestCase
+class TwigExtensionTest extends \PHPUnit\Framework\TestCase
 {
     public function isCurrentPathProvider()
     {

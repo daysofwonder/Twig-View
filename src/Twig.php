@@ -190,46 +190,46 @@ class Twig implements \ArrayAccess
     /**
      * Does this collection have a given key?
      *
-     * @param  string $key The data key
+     * @param  mixed $offset The data key
      *
      * @return bool
      */
-    public function offsetExists($key)
+    public function offsetExists(mixed $offset) : bool
     {
-        return array_key_exists($key, $this->defaultVariables);
+        return array_key_exists($offset, $this->defaultVariables);
     }
 
     /**
      * Get collection item for key
      *
-     * @param string $key The data key
+     * @param mixed $offset The data key
      *
      * @return mixed The key's value, or the default value
      */
-    public function offsetGet($key)
+    public function offsetGet(mixed $offset) : mixed
     {
-        return $this->defaultVariables[$key];
+        return $this->defaultVariables[$offset];
     }
 
     /**
      * Set collection item
      *
-     * @param string $key   The data key
+     * @param mixed $key   The data key
      * @param mixed  $value The data value
      */
-    public function offsetSet($key, $value)
+    public function offsetSet(mixed $offset, mixed $value) : void
     {
-        $this->defaultVariables[$key] = $value;
+        $this->defaultVariables[$offset] = $value;
     }
 
     /**
      * Remove item from collection
      *
-     * @param string $key The data key
+     * @param mixed $key The data key
      */
-    public function offsetUnset($key)
+    public function offsetUnset(mixed $offset) : void
     {
-        unset($this->defaultVariables[$key]);
+        unset($this->defaultVariables[$offset]);
     }
 
     /********************************************************************************
@@ -241,7 +241,7 @@ class Twig implements \ArrayAccess
      *
      * @return int
      */
-    public function count()
+    public function count() : int
     {
         return count($this->defaultVariables);
     }
@@ -255,7 +255,7 @@ class Twig implements \ArrayAccess
      *
      * @return \ArrayIterator
      */
-    public function getIterator()
+    public function getIterator(): \ArrayIterator
     {
         return new \ArrayIterator($this->defaultVariables);
     }
